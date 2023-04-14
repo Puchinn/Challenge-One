@@ -10,17 +10,27 @@ const llaves = {
     'o': 'ober',
     'u': 'ufat'
 }
-const regex = /[aeiou]/g;
+const regexLetras = /[aeiou]/g
+const regexPalabras = /(ai|enter|imes|ober|ufat)/g
 
 function encriptar() {
     const text = textArea.value
-    let newText = text.replaceAll(regex, (coincidencia) => {
+    const newText = text.replaceAll(regexLetras, (coincidencia) => {
         return llaves[coincidencia]
     })
     salida.innerHTML = newText
 }
 
+function desencriptar() {
+    const text = textArea.value
+    const newText = text.replaceAll(regexPalabras, (palabra) => {
+        return Object.keys(llaves).find(llave => llaves[llave] === palabra)
+    })
+    salida.innerHTML = newText
+}
+
 btnEnc.addEventListener('click', encriptar)
+btnDes.addEventListener('click', desencriptar)
 
 
 
