@@ -2,6 +2,7 @@ const textArea = document.getElementById('texto')
 const btnEnc = document.getElementById('encriptar')
 const btnDes = document.getElementById('desencriptar')
 const salida = document.getElementById('salida')
+const btnCop = document.getElementById('copiar')
 
 const llaves = {
     'a': 'ai',
@@ -29,8 +30,14 @@ function desencriptar() {
     salida.innerHTML = newText
 }
 
+function copiar() {
+    const text = salida.textContent
+    navigator.clipboard.writeText(text)
+}
+
 btnEnc.addEventListener('click', encriptar)
 btnDes.addEventListener('click', desencriptar)
+btnCop.addEventListener('click', copiar)
 
 
 
