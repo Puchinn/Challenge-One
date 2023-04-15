@@ -22,7 +22,11 @@ function obtenerTexto() {
 }
 
 function encriptar() {
-    const text = textArea.value
+    const text = obtenerTexto()
+    if (!text) {
+        alert('SIN MAYUSCULAS Y CARACTERES ESPECIALES CAPO')
+        return
+    }
     const newText = text.replaceAll(regexLetras, (coincidencia) => {
         return llaves[coincidencia]
     })
@@ -30,7 +34,11 @@ function encriptar() {
 }
 
 function desencriptar() {
-    const text = textArea.value
+    const text = obtenerTexto()
+    if (!text) {
+        alert('SIN MAYUSCULAS Y CARACTERES ESPECIALES CAPO')
+        return
+    }
     const newText = text.replaceAll(regexPalabras, (palabra) => {
         return Object.keys(llaves).find(llave => llaves[llave] === palabra)
     })
