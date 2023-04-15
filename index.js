@@ -11,8 +11,9 @@ const llaves = {
     'o': 'ober',
     'u': 'ufat'
 }
-const regexLetras = /[aeiou]/g
-const regexPalabras = /(ai|enter|imes|ober|ufat)/g
+
+const regexLetras = new RegExp('[' + Object.keys(llaves).join('') + ']', 'g')
+const regexPalabras = new RegExp('\(' + Object.values(llaves).join('|') + '\)', 'g')
 
 function encriptar() {
     const text = textArea.value
