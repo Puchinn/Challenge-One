@@ -15,6 +15,12 @@ const llaves = {
 const regexLetras = new RegExp('[' + Object.keys(llaves).join('') + ']', 'g')
 const regexPalabras = new RegExp('\(' + Object.values(llaves).join('|') + '\)', 'g')
 
+function obtenerTexto() {
+    const texto = textArea.value
+    const regexText = /^[a-z\s0-9]+$/
+    return regexText.test(texto) ? texto : false
+}
+
 function encriptar() {
     const text = textArea.value
     const newText = text.replaceAll(regexLetras, (coincidencia) => {
