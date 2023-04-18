@@ -55,5 +55,14 @@ btnDes.addEventListener('click', desencriptar)
 btnCop.addEventListener('click', copiar)
 
 
+document.onload = ScrollHeight();
+window.addEventListener('resize', function (event) {
+    ScrollHeight();
+});
 
+function ScrollHeight() {
+    const content = document.querySelector('.pergamino');
+    const container = document.querySelector('.container');
+    content.style.height = container.offsetHeight + 'px';
+}
 
