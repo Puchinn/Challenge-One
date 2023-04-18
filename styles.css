@@ -17,17 +17,22 @@ body {
 }
 
 main {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+svg {
+  display: none;
 }
 
 .pergamino {
   position: absolute;
-  width: 80%;
+  width: 98%;
+  z-index: -10;
   top: 0%;
   left: 50%;
-  transform: translate(-50%, 0);
-  margin: 40px auto;
+  height: 100%;
+  transform: translate(-52%, 0);
   padding: 50px 0;
   box-shadow: 0 0 125px #8f5922 inset;
   background: #fffef0;
@@ -36,14 +41,14 @@ main {
 }
 
 .container {
-  padding: 60px 30px;
+  padding: 40px 20px;
+  padding-bottom: 100px;
   position: relative;
 }
 
 .container__titulo {
   text-align: center;
-  padding: 50px;
-  font-size: 90px;
+  font-size: 60px;
   font-family: Pirata One, sans-serif;
   text-align: center;
   color: rgba(0, 0, 0, 0.743);
@@ -51,16 +56,17 @@ main {
 
 .advertencia {
   text-align: center;
+  font-size: 24px;
   font-family: Pirata One, sans-serif;
   font-weight: 300;
-  letter-spacing: 2px;
   color: #0000008c;
   margin: 10px auto;
 }
 
 .container__inputs {
-  padding: 10px 50px;
+  gap: 60px 10px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -72,13 +78,9 @@ main {
   gap: 20px;
 }
 
-.copiar {
-  padding-left: 40px;
-}
-
 .copiar p {
   font-family: "Bilbo Swash Caps", cursive;
-  font-size: 39px;
+  font-size: 32px;
   font-weight: 300;
   color: #000000b4;
   margin: 0;
@@ -87,7 +89,7 @@ main {
 
 .copiar__titulo {
   font-family: Pirata One, sans-serif;
-  font-size: 45px;
+  font-size: 35px;
   font-weight: 300;
   color: #000000b2;
   padding: 0;
@@ -98,12 +100,12 @@ textarea {
   border: none;
   outline: none;
   border-radius: 7px;
-  border: 3px solid #8f5922;
+  border: 2px solid #8f5922;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.17), inset 0 0 125px #fffef0;
   padding: 15px 10px;
-  width: 120%;
-  height: 400px;
-  font-size: 41px;
+  width: 100%;
+  height: 300px;
+  font-size: 32px;
   color: #7f3300;
   font-family: "Bilbo Swash Caps", cursive;
   cursor: inherit;
@@ -115,13 +117,64 @@ button {
   border: none;
   outline: none;
   display: inline-block;
-  width: 300px;
+  width: 200px;
   margin: auto;
-  padding: 15px 10px;
-  font-size: 50px;
+  padding: 10px 5px;
+  font-size: 34px;
   font-family: "Bilbo Swash Caps", cursive;
   background-color: #fcfbf5;
   cursor: pointer;
   font-weight: 600;
-  border: 5px dashed #f00;
+  border: 2px dashed #f00;
+}
+
+@media (min-width: 1400px) {
+  main {
+    max-width: 1400px;
+  }
+  textarea {
+    width: 120%;
+  }
+}
+
+@media (min-width: 900px) {
+  .pergamino {
+    width: 97%;
+  }
+  .container__inputs {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 460px) {
+  .pergamino {
+    margin: 40px auto;
+  }
+  .container {
+    padding: 60px 40px;
+  }
+  .container__titulo {
+    font-size: 90px;
+    padding: 50px 0 0 0;
+  }
+  .advertencia {
+    letter-spacing: 2px;
+  }
+  textarea {
+    height: 400px;
+    font-size: 41px;
+    border: 3px solid #8f5922;
+  }
+  button {
+    width: 300px;
+    font-size: 50px;
+    padding: 15px 10px;
+    border: 4px dashed #f00;
+  }
+  .copiar__titulo {
+    font-size: 45px;
+  }
+  .copiar p {
+    font-size: 39px;
+  }
 }
