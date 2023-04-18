@@ -4,6 +4,11 @@
   font-family: Morris;
   src: url(https://cdn.statically.io/gh/EmmesCodes/Tipografias/dae9f5bb/MorrisInitials.ttf);
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/witewall_3.png");
@@ -18,8 +23,6 @@ main {
 
 .pergamino {
   position: absolute;
-  min-height: 60vh;
-  display: flex;
   width: 80%;
   top: 0%;
   left: 50%;
@@ -33,23 +36,40 @@ main {
 }
 
 .container {
-  padding: 50px 30px;
+  padding: 60px 30px;
   position: relative;
 }
 
 .container__titulo {
   text-align: center;
-  padding: 10px;
+  padding: 50px;
   font-size: 90px;
   font-family: Pirata One, sans-serif;
   text-align: center;
   color: rgba(0, 0, 0, 0.743);
 }
 
+.advertencia {
+  text-align: center;
+  font-family: Pirata One, sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #0000008c;
+  margin: 10px auto;
+}
+
 .container__inputs {
-  padding: 10px;
+  padding: 10px 50px;
   display: flex;
   justify-content: space-around;
+}
+
+.encriptar,
+.desencriptar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .copiar {
@@ -65,19 +85,13 @@ main {
   margin-bottom: 25px;
 }
 
-h2 {
+.copiar__titulo {
   font-family: Pirata One, sans-serif;
   font-size: 45px;
   font-weight: 300;
   color: #000000b2;
   padding: 0;
   margin: 50px 0 10px 0;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 textarea {
@@ -87,13 +101,14 @@ textarea {
   border: 3px solid #8f5922;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.17), inset 0 0 125px #fffef0;
   padding: 15px 10px;
-  width: 100%;
+  width: 120%;
   height: 400px;
   font-size: 41px;
   color: #7f3300;
   font-family: "Bilbo Swash Caps", cursive;
   cursor: inherit;
   letter-spacing: 2px;
+  resize: none;
 }
 
 button {
