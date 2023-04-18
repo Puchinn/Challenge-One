@@ -1,4 +1,5 @@
-const textArea = document.getElementById('texto')
+const textEnc = document.getElementById('textEnc')
+const textDes = document.getElementById('textDes')
 const btnEnc = document.getElementById('encriptar')
 const btnDes = document.getElementById('desencriptar')
 const salida = document.getElementById('salida')
@@ -15,14 +16,14 @@ const llaves = {
 const regexLetras = new RegExp('[' + Object.keys(llaves).join('') + ']', 'g')
 const regexPalabras = new RegExp('\(' + Object.values(llaves).join('|') + '\)', 'g')
 
-function obtenerTexto() {
-    const texto = textArea.value
+function obtenerTexto(string) {
+    const texto = string === 'encriptar' ? textEnc.value : textDes.value
     const regexText = /^[a-z\s0-9]+$/
     return regexText.test(texto) ? texto : false
 }
 
 function encriptar() {
-    const text = obtenerTexto()
+    const text = obtenerTexto('encriptar')
     if (!text) {
         alert('SIN MAYUSCULAS Y CARACTERES ESPECIALES CAPO')
         return
@@ -34,7 +35,7 @@ function encriptar() {
 }
 
 function desencriptar() {
-    const text = obtenerTexto()
+    const text = obtenerTexto('desencriptar')
     if (!text) {
         alert('SIN MAYUSCULAS Y CARACTERES ESPECIALES CAPO')
         return
