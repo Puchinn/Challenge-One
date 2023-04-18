@@ -12,46 +12,35 @@
       <div class="pergamino"></div>
       <div class="container">
         <h1 class="container__titulo">Encriptador</h1>
-
+        <h2 class="advertencia">
+          Advertencia: solo textos en minuscula y sin caracteres especiales.
+        </h2>
         <div class="container__inputs">
           <div class="encriptar">
-            <form>
-              <textarea
-                name="textEnc"
-                id="textEnc"
-                cols="30"
-                rows="10"
-                placeholder="Escribe algo secreto..."
-              ></textarea>
-              <button id="encriptar">Encriptar</button>
-            </form>
+            <textarea
+              name="textEnc"
+              id="textEnc"
+              cols="30"
+              rows="10"
+              placeholder="Escribe algo secreto..."
+            ></textarea>
+            <button id="encriptar">Encriptar</button>
           </div>
 
           <div class="desencriptar">
-            <form>
-              <textarea
-                name="textDes"
-                id="textDes"
-                cols="30"
-                rows="10"
-                placeholder="Descubre un secreto..."
-              ></textarea>
-              <button id="desencriptar">Desencriptar</button>
-            </form>
+            <textarea
+              name="textDes"
+              id="textDes"
+              cols="30"
+              rows="10"
+              placeholder="Descubre un secreto..."
+            ></textarea>
+            <button id="desencriptar">Desencriptar</button>
           </div>
         </div>
         <div class="copiar">
-          <h2>Texto de salida :</h2>
-          <p id="salida">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum sit
-            voluptatibus adipisci odit dolorem molestiae, repellendus omnis
-            alias labore fugit magnam vero aspernatur nostrum amet. Tenetur
-            blanditiis vel inventore reiciendis quaerat modi sunt enim, officia
-            maxime officiis ipsum dolores voluptatem delectus minus quisquam
-            impedit possimus. Explicabo odit, nobis, error quis, accusamus
-            ratione aut accusantium libero necessitatibus asperiores magnam
-            quaerat amet.
-          </p>
+          <h2 class="copiar__titulo">Texto de salida :</h2>
+          <p id="salida">Esperando texto...</p>
           <button id="copiar">Copiar texto</button>
         </div>
       </div>
