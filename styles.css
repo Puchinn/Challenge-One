@@ -25,6 +25,45 @@ svg {
   display: none;
 }
 
+.noti {
+  position: fixed;
+  width: 100%;
+  top: 70px;
+  justify-content: center;
+  z-index: 10;
+  display: none;
+}
+
+.animar {
+  animation: notificacion 0.4s;
+}
+
+.exitNoti {
+  transform: translateY(-300px);
+  transition: transform 0.6s;
+}
+
+.noti h1 {
+  background-color: rgba(186, 148, 60, 0.82);
+  color: #fff;
+  padding: 5px 30px;
+  font-family: "Bilbo Swash Caps", cursive;
+  font-size: 41px;
+  letter-spacing: 2px;
+  border-radius: 3px;
+}
+
+@keyframes notificacion {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  100% {
+    top: 70px;
+    opacity: 1;
+  }
+}
+
 .pergamino {
   position: absolute;
   width: 98%;

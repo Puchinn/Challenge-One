@@ -4,6 +4,7 @@ const btnEnc = document.getElementById('encriptar')
 const btnDes = document.getElementById('desencriptar')
 const salida = document.getElementById('salida')
 const btnCop = document.getElementById('copiar')
+const noti = document.querySelector('.noti')
 
 const llaves = {
     'a': 'ai',
@@ -22,10 +23,28 @@ function obtenerTexto(string) {
     return regexText.test(texto) ? texto : false
 }
 
+function animar() {
+    if (noti.classList.contains('animar')) {
+        return
+    } else if (noti.classList.contains('exitNoti')) {
+        return
+    }
+    noti.style.display = 'flex'
+    noti.classList.add('animar')
+    setTimeout(() => {
+        noti.classList.remove('animar')
+        noti.classList.add('exitNoti')
+        setTimeout(() => {
+            noti.classList.remove('exitNoti')
+            noti.style.display = 'none'
+        }, 200)
+    }, 3000)
+}
+
 function encriptar() {
     const text = obtenerTexto('encriptar')
     if (!text) {
-        alert('SIN MAYUSCULAS Y CARACTERES ESPECIALES CAPO')
+        animar()
         return
     }
     const newText = text.replaceAll(regexLetras, (coincidencia) => {
@@ -37,7 +56,7 @@ function encriptar() {
 function desencriptar() {
     const text = obtenerTexto('desencriptar')
     if (!text) {
-        alert('SIN MAYUSCULAS Y CARACTERES ESPECIALES CAPO')
+        animar()
         return
     }
     const newText = text.replaceAll(regexPalabras, (palabra) => {
