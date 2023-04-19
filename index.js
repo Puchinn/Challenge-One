@@ -44,28 +44,36 @@ function animar() {
 function encriptar() {
     const text = obtenerTexto('encriptar')
     if (!text) {
+        noti.innerHTML = '<h1>Advertencia: texto invalido</h1>'
         animar()
         return
     }
     const newText = text.replaceAll(regexLetras, (coincidencia) => {
         return llaves[coincidencia]
     })
+    noti.innerHTML = '<h1>Encriptado exitoso!</h1>'
+    animar()
     salida.innerHTML = newText
 }
 
 function desencriptar() {
     const text = obtenerTexto('desencriptar')
     if (!text) {
+        noti.innerHTML = '<h1>Advertencia: texto invalido</h1>'
         animar()
         return
     }
     const newText = text.replaceAll(regexPalabras, (palabra) => {
         return Object.keys(llaves).find(llave => llaves[llave] === palabra)
     })
+    noti.innerHTML = '<h1>Desencriptado exitoso!</h1>'
+    animar()
     salida.innerHTML = newText
 }
 
 function copiar() {
+    noti.innerHTML = '<h1>Texto copiado!</h1>'
+    animar()
     const text = salida.textContent
     navigator.clipboard.writeText(text)
 }
