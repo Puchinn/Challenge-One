@@ -14,6 +14,7 @@ body {
   background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/witewall_3.png");
   cursor: url("assets/kisspng-quill-paper-inkwell-pen-write-5ac7b0020c7587.9380702915230361620511\ \(1\).png"),
     auto;
+  overflow-x: hidden;
 }
 
 main {
@@ -71,7 +72,7 @@ svg {
   top: 0%;
   left: 50%;
   height: 100%;
-  transform: translate(-52%, 0);
+  transform: translate(-51%, 0);
   padding: 50px 0;
   box-shadow: 0 0 125px #8f5922 inset;
   background: #fffef0;
@@ -95,7 +96,7 @@ svg {
 
 .advertencia {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   font-size: 24px;
   font-family: Pirata One, sans-serif;
   font-weight: 300;
@@ -104,27 +105,37 @@ svg {
 }
 
 .container__inputs {
-  gap: 60px 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  width: 60%;
 }
 
-.encriptar,
-.desencriptar {
+.container__secundario {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  gap: 15px;
+  margin: 0 auto;
 }
-
-.copiar p {
+.botones {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.encriptar {
+  width: 100%;
+}
+.copiar {
+  width: 40%;
+}
+#salida {
   font-family: "Bilbo Swash Caps", cursive;
-  font-size: 32px;
+  font-size: 40px;
+  letter-spacing: 2px;
   font-weight: 300;
   color: #000000b4;
   margin: 0;
   margin-bottom: 25px;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+  height: 400px;
 }
 
 .copiar__titulo {
@@ -133,7 +144,6 @@ svg {
   font-weight: 300;
   color: #000000b2;
   padding: 0;
-  margin: 50px 0 10px 0;
 }
 
 textarea {
@@ -144,7 +154,7 @@ textarea {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.17), inset 0 0 125px #fffef0;
   padding: 15px 10px;
   width: 100%;
-  height: 300px;
+  height: 230px;
   font-size: 32px;
   color: #7f3300;
   font-family: "Bilbo Swash Caps", cursive;
@@ -157,10 +167,8 @@ button {
   border: none;
   outline: none;
   display: inline-block;
-  width: 200px;
-  margin: auto;
-  padding: 10px 5px;
-  font-size: 34px;
+  padding: 5px 10px;
+  font-size: 31px;
   font-family: "Bilbo Swash Caps", cursive;
   background-color: #fcfbf5;
   cursor: pointer;
@@ -173,20 +181,26 @@ button {
     max-width: 1400px;
   }
   textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 930px) {
+  .pergamino {
     width: 120%;
   }
-}
-
-@media (min-width: 900px) {
-  .pergamino {
-    width: 97%;
+  .container__secundario {
+    flex-direction: column;
   }
   .container__inputs {
-    flex-direction: row;
+    width: 100%;
+  }
+  .copiar {
+    width: 100%;
   }
 }
 
-@media (min-width: 460px) {
+@media (min-width: 600px) {
   .pergamino {
     margin: 40px auto;
   }
@@ -206,9 +220,8 @@ button {
     border: 3px solid #8f5922;
   }
   button {
-    width: 300px;
-    font-size: 50px;
-    padding: 15px 10px;
+    width: 200px;
+    font-size: 39px;
     border: 4px dashed #f00;
   }
   .copiar__titulo {
