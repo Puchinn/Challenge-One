@@ -16,33 +16,27 @@
         <h2 class="advertencia">
           Advertencia: solo textos en minuscula y sin caracteres especiales.
         </h2>
-        <div class="container__inputs">
-          <div class="encriptar">
-            <textarea
-              name="textEnc"
-              id="textEnc"
-              cols="30"
-              rows="10"
-              placeholder="Escribe algo secreto..."
-            ></textarea>
-            <button id="encriptar">Encriptar</button>
+        <div class="container__secundario">
+          <div class="container__inputs">
+            <div class="encriptar">
+              <textarea
+                name="texto"
+                id="texto"
+                cols="30"
+                rows="10"
+                placeholder="Escribe algo secreto..."
+              ></textarea>
+              <div class="botones">
+                <button id="encriptar">Encriptar</button>
+                <button id="desencriptar">Desencriptar</button>
+                <button id="copiar">Copiar texto</button>
+              </div>
+            </div>
           </div>
-
-          <div class="desencriptar">
-            <textarea
-              name="textDes"
-              id="textDes"
-              cols="30"
-              rows="10"
-              placeholder="Descubre un secreto..."
-            ></textarea>
-            <button id="desencriptar">Desencriptar</button>
+          <div class="copiar">
+            <h2 class="copiar__titulo">Texto de salida :</h2>
+            <p id="salida">Esperando texto...</p>
           </div>
-        </div>
-        <div class="copiar">
-          <h2 class="copiar__titulo">Texto de salida :</h2>
-          <p id="salida">Esperando texto...</p>
-          <button id="copiar">Copiar texto</button>
         </div>
       </div>
     </main>
