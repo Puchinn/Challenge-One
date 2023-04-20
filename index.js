@@ -4,6 +4,7 @@ const btnDes = document.getElementById('desencriptar')
 const salida = document.getElementById('salida')
 const btnCop = document.getElementById('copiar')
 const noti = document.querySelector('.noti')
+const noAdvertencia = document.getElementById('noAdvertencia')
 
 const llaves = {
     'a': 'ai',
@@ -16,8 +17,19 @@ const llaves = {
 const regexLetras = new RegExp('[' + Object.keys(llaves).join('') + ']', 'g')
 const regexPalabras = new RegExp('\(' + Object.values(llaves).join('|') + '\)', 'g')
 
+let permitirTexto = false
+
+function actualizarPermitir() {
+    const texto = permitirTexto ? 'Desactivar advertencia' : 'Activar advertencia'
+    noAdvertencia.innerHTML = texto
+    permitirTexto = !permitirTexto
+}
+
 function obtenerTexto() {
     const text = texto.value
+    if (permitirTexto) {
+        return text
+    }
     const regexText = /^[a-z\s0-9]+$/
     return regexText.test(text) ? text : false
 }
@@ -80,3 +92,4 @@ function animar() {
 btnEnc.addEventListener('click', encriptar)
 btnDes.addEventListener('click', desencriptar)
 btnCop.addEventListener('click', copiar)
+noAdvertencia.addEventListener('click', actualizarPermitir)
