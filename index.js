@@ -1,5 +1,4 @@
-const textEnc = document.getElementById('textEnc')
-const textDes = document.getElementById('textDes')
+const texto = document.getElementById('texto')
 const btnEnc = document.getElementById('encriptar')
 const btnDes = document.getElementById('desencriptar')
 const salida = document.getElementById('salida')
@@ -17,32 +16,14 @@ const llaves = {
 const regexLetras = new RegExp('[' + Object.keys(llaves).join('') + ']', 'g')
 const regexPalabras = new RegExp('\(' + Object.values(llaves).join('|') + '\)', 'g')
 
-function obtenerTexto(string) {
-    const texto = string === 'encriptar' ? textEnc.value : textDes.value
+function obtenerTexto() {
+    const text = texto.value
     const regexText = /^[a-z\s0-9]+$/
-    return regexText.test(texto) ? texto : false
-}
-
-function animar() {
-    if (noti.classList.contains('animar')) {
-        return
-    } else if (noti.classList.contains('exitNoti')) {
-        return
-    }
-    noti.style.display = 'flex'
-    noti.classList.add('animar')
-    setTimeout(() => {
-        noti.classList.remove('animar')
-        noti.classList.add('exitNoti')
-        setTimeout(() => {
-            noti.classList.remove('exitNoti')
-            noti.style.display = 'none'
-        }, 200)
-    }, 3000)
+    return regexText.test(text) ? text : false
 }
 
 function encriptar() {
-    const text = obtenerTexto('encriptar')
+    const text = obtenerTexto()
     if (!text) {
         noti.innerHTML = '<h1>Advertencia: texto invalido</h1>'
         animar()
@@ -57,7 +38,7 @@ function encriptar() {
 }
 
 function desencriptar() {
-    const text = obtenerTexto('desencriptar')
+    const text = obtenerTexto()
     if (!text) {
         noti.innerHTML = '<h1>Advertencia: texto invalido</h1>'
         animar()
@@ -76,6 +57,24 @@ function copiar() {
     animar()
     const text = salida.textContent
     navigator.clipboard.writeText(text)
+}
+
+function animar() {
+    if (noti.classList.contains('animar')) {
+        return
+    } else if (noti.classList.contains('exitNoti')) {
+        return
+    }
+    noti.style.display = 'flex'
+    noti.classList.add('animar')
+    setTimeout(() => {
+        noti.classList.remove('animar')
+        noti.classList.add('exitNoti')
+        setTimeout(() => {
+            noti.classList.remove('exitNoti')
+            noti.style.display = 'none'
+        }, 200)
+    }, 3000)
 }
 
 btnEnc.addEventListener('click', encriptar)
