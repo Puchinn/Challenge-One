@@ -71,9 +71,8 @@ svg {
   z-index: -10;
   top: 0%;
   left: 50%;
-  height: 100%;
+  height: 95%;
   transform: translate(-51%, 0);
-  padding: 50px 0;
   box-shadow: 0 0 125px #8f5922 inset;
   background: #fffef0;
   filter: url(#wavy2);
@@ -183,6 +182,24 @@ button {
   border: 2px dashed #f00;
 }
 
+.footer {
+  text-align: center;
+  margin: 40px 0 0 0;
+  font-size: 38px;
+  font-family: "Bilbo Swash Caps", cursive;
+}
+
+.footer a {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 22px;
+  text-decoration: none;
+  color: #000000c0;
+  letter-spacing: 2px;
+  margin: 5px 5px;
+  padding-bottom: 5px;
+  text-decoration: underline;
+}
+
 @media (min-width: 1400px) {
   main {
     max-width: 1400px;
@@ -219,7 +236,7 @@ button {
     margin: 40px auto;
   }
   .container {
-    padding: 60px 40px;
+    padding: 30px 40px;
   }
   .container__titulo {
     font-size: 90px;
